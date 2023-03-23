@@ -59,8 +59,8 @@ def uploadCSVFileToPokemonStatsDatabase(file, db):
         # To migrate a new table with nullable columns, we need to drop the table and then create it again
         # To drop the table, we need to go to pgadmin and drop the table manually by right clicking on the table and selecting Delete/Drop
 
-        pokemonStats = PokemonStats(pokemon_id=row[0], height_m=row[26] if row[26] else None, weight_kg=row[31] if row[31] else None, attack=row[19])
-        # here we are adding the pokemon object to the database session and not to the database itself
+        pokemonStats = PokemonStats(pokemon_id=row[0], height_m=row[26] if row[26] else None, weight_kg=row[31] if row[31] else None, attack=row[19], defense=row[24])
+        # here we are adding the pokemon object to the database session and not to the database itself FIND INDEX NUMBER
         db.add(pokemonStats)
     
     # commit the changes to the database which will insert the data into the database 
